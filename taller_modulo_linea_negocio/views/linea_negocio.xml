@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        <record model="ir.ui.view" id="taller_linea_negocio_view_tree">
+            <field name="name">taller.linea.negocio.view.tree</field>
+            <field name="model">taller.linea.negocio</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Linea de negocio" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="taller_linea_negocio_view_form">
+            <field name="name">taller.linea.negocio.view.form</field>
+            <field name="model">taller.linea.negocio</field>
+            <field name="arch" type="xml">
+
+                <form>
+                    <sheet>
+                        <group>
+
+                            <group>
+                                <field name="name" string="Linea negocio" />
+                            </group>
+
+
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="linea_negocio_model_action">
+            <field name="name">Linea de Negocios</field>
+            <field name="res_model">taller.linea.negocio</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="account_linea_negocio" name="Linea de Negocios"
+            groups="account.group_account_manager" parent="account.menu_finance_configuration">
+            <menuitem id="menu_action_linea_negocio" name="Linea de Negocios"
+                action="linea_negocio_model_action" groups="account.group_account_manager" />
+        </menuitem>
+
+
+    </data>
+
+
+</odoo>
